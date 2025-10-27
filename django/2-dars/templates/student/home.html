@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rashidov.com</title>
+</head>
+<body>
+<h1>Bosh sahifa</h1>
+{% for h in home %}
+    {% if h == 'about' %}
+        <li><a href="{% url 'about' %}">{{ h }}</a> </li>
+    {% elif h == 'service' %}
+        <li><a href="{% url 'service' %}">{{ h }}</a> </li>
+    {% elif h == 'result' %}
+        <li><a href="{% url 'result' %}">{{ h }}</a> </li>
+    {% elif h == 'kunuz' %}
+        <li><a href="{% url 'kunuz' %}">{{ h }}</a> </li>
+    {% else %}
+         <li><a href="{% url 'course' %}">{{ h }}</a> </li>
+    {% endif %}
+{% endfor %}
+
+</body>
+</html>
