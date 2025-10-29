@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% extends 'base.html' %}
+{% block title %}Products{% endblock %}
+
+{% block content %}
+<h2 class="text-center mb-4">Our Products</h2>
+
+<div class="row g-4">
+    {% for d in data %}
+    <div class="col-md-3 col-sm-6">
+        <div class="product-card">
+            <img src="https://via.placeholder.com/150" class="img-fluid rounded" alt="{{ d.name }}">
+            <div class="product-name">{{ d.name|capfirst }}</div>
+            <div class="product-price">${{ d.price }}</div>
+            <p class="text-muted small mb-3">{{ d.description|capfirst }}</p>
+            <button class="btn btn-buy btn-sm">Buy Now</button>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+
+
+</body>
+</html>
